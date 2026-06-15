@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NeuroTrace Interactive is a local, illustrative cognitive pathway explorer for AI response dynamics.">
+  <meta name="theme-color" content="#050816">
+  <meta property="og:title" content="NeuroTrace Interactive">
+  <meta property="og:description" content="A polished local-only AI demo for visualizing illustrative cognitive activation zones.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>NeuroTrace Interactive</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23050816'/%3E%3Ccircle cx='32' cy='32' r='14' fill='%236ee7ff'/%3E%3Cpath d='M12 32h40M32 12v40' stroke='%237cffc7' stroke-width='3' opacity='.85'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#demo">Skip to demo</a>
+  <div class="ambient" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="scanline" aria-hidden="true"></div>
+
+  <header class="hero" id="top">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="NeuroTrace Interactive home"><span class="brand-mark"></span><span>NeuroTrace</span></a>
+      <div class="nav-links">
+        <a href="#demo">Demo</a>
+        <a href="#about">About</a>
+      </div>
+    </nav>
+
+    <section class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Illustrative AI response dynamics</p>
+        <h1>NeuroTrace Interactive</h1>
+        <p class="subtitle">A visual explorer for the cognitive pathways behind AI responses.</p>
+        <p class="intro">Enter a prompt and watch an illustrative activation map evolve as the system generates a response.</p>
+        <div class="hero-actions">
+          <a class="cta" href="#demo">Launch demo</a>
+          <span class="privacy-pill">Local-only · No tracking · No APIs</span>
+        </div>
+      </div>
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbital-grid"></div>
+        <div class="orbital-core"></div>
+        <div class="ring ring-one"></div>
+        <div class="ring ring-two"></div>
+        <div class="ring ring-three"></div>
+        <div class="pulse-dot d1"></div><div class="pulse-dot d2"></div><div class="pulse-dot d3"></div><div class="pulse-dot d4"></div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="demo-shell" id="demo" aria-labelledby="demo-title">
+      <div class="section-heading">
+        <p class="eyebrow">One-shot local demo</p>
+        <h2 id="demo-title">Generate a NeuroTrace</h2>
+        <p class="disclaimer">NeuroTrace is an illustrative visualization of AI response dynamics. It does not expose real neural activations or proprietary model internals.</p>
+      </div>
+
+      <div class="workspace">
+        <form class="control-panel glass" id="traceForm">
+          <div class="panel-heading">
+            <div><span class="panel-kicker">Input stream</span><label for="promptInput">Prompt</label></div>
+            <span class="secure-badge">Browser only</span>
+          </div>
+          <textarea id="promptInput" rows="7" aria-describedby="privacyNote" placeholder="Ask about safety, healthcare, quantum computing, uncertainty, or another AI scenario..."></textarea>
+          <div class="examples" aria-label="Example prompts">
+            <button type="button" class="example">How should an AI react to a risky instruction?</button>
+            <button type="button" class="example">Explain quantum computing to a non-technical person.</button>
+            <button type="button" class="example">Should an AI admit uncertainty?</button>
+            <button type="button" class="example">Design a safe AI assistant for healthcare.</button>
+          </div>
+          <button class="generate" type="submit" aria-label="Generate NeuroTrace visualization"><span>Generate NeuroTrace</span></button>
+          <p id="privacyNote" class="privacy-note">Runs entirely in your browser. No API calls, cookies, analytics, or storage.</p>
+        </form>
+
+        <section class="output-panel glass" aria-live="polite" aria-label="Simulated AI response and insight summary">
+          <div class="panel-topline"><span class="status-dot"></span><span id="statusText">Ready for prompt</span></div>
+          <div class="response-card">
+            <div class="response-header"><h3>AI-style response</h3><span id="confidenceChip">Simulated</span></div>
+            <div id="responseText" class="response-text">Submit a prompt to generate a concise simulated response.</div>
+          </div>
+          <div class="summary-grid" id="summaryGrid">
+            <div><span>Dominant zone</span><strong id="dominantZone">—</strong></div>
+            <div><span>Secondary zone</span><strong id="secondaryZone">—</strong></div>
+            <div><span>Risk sensitivity</span><strong id="riskLevel">—</strong></div>
+            <div><span>Human review</span><strong id="humanReview">—</strong></div>
+          </div>
+          <p class="summary-note">Insight summary is illustrative only and is not a real audit score.</p>
+        </section>
+      </div>
+
+      <section class="visualization glass" aria-label="Activation visualization">
+        <div class="visual-head">
+          <div><span class="panel-kicker">Activation topology</span><h3>Fictional cognitive pathway map</h3></div>
+          <div class="energy-readout"><span>Signal coherence</span><strong id="coherence">0%</strong></div>
+        </div>
+        <div class="map-wrap">
+          <svg class="connectors" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <div class="core-node" aria-label="Central AI core"><span></span><strong>AI Core</strong><small>simulated response engine</small></div>
+          <div class="zones" id="zones"></div>
+        </div>
+        <div class="timeline" id="timeline" aria-label="Generation phases">
+          <div><span></span><strong>Prompt Parsing</strong><small>Intent and constraints</small></div>
+          <div><span></span><strong>Context Framing</strong><small>Domain emphasis</small></div>
+          <div><span></span><strong>Safety Check</strong><small>Risk-aware routing</small></div>
+          <div><span></span><strong>Response Planning</strong><small>Structure and tone</small></div>
+          <div><span></span><strong>Final Generation</strong><small>Concise answer</small></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="glass about-card">
+        <p class="eyebrow">Responsible communication</p>
+        <h2 id="about-title">About the project</h2>
+        <p>NeuroTrace Interactive explores how AI systems can be made more understandable through visual metaphors. It is designed for AI safety, transparency, and responsible AI communication without revealing hidden prompts, security logic, private evaluations, or proprietary methods.</p>
+        <p>This project is inspired by research in AI safety, cognitive cybersecurity, and interpretability-oriented interfaces.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by Jordi Garcia Castillón · CiberTECCH / CibraLAB · Demo for public showcase purposes</p>
+    <div class="footer-links" aria-label="External links"><a href="https://jordigarcia.eu/" target="_blank" rel="noopener noreferrer">Website</a><a href="https://linkedin.com/in/gcjordi" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/gcjordi" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
