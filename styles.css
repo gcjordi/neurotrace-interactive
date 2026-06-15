@@ -112,10 +112,10 @@ body::before {
 .hero { padding-bottom: clamp(3rem, 8vw, 6rem); }
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-  gap: clamp(2rem, 6vw, 4.75rem);
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+  gap: clamp(2.25rem, 5vw, 4.25rem);
   align-items: center;
-  min-height: 610px;
+  min-height: clamp(560px, 72vh, 700px);
 }
 .eyebrow, .panel-kicker {
   margin: 0 0 0.75rem;
@@ -126,10 +126,13 @@ body::before {
   font-weight: 900;
 }
 h1, h2, h3 { margin-block: 0; letter-spacing: -0.045em; }
+.hero-copy { min-width: 0; }
 h1 {
-  max-width: 760px;
-  font-size: clamp(3.6rem, 9vw, 8.6rem);
-  line-height: 0.84;
+  max-width: min(820px, 100%);
+  padding-block: 0.08em;
+  overflow: visible;
+  font-size: clamp(3.55rem, 7.6vw, 7.7rem);
+  line-height: 0.96;
   background: linear-gradient(110deg, #fff 8%, var(--cyan) 42%, #d3c9ff 78%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -364,7 +367,7 @@ footer { padding: 1.8rem 0 2.8rem; color: var(--muted); display: flex; justify-c
   .nav, .hero-grid, .demo-shell, .about, footer { width: min(100% - 28px, 1180px); }
   .nav { align-items: flex-start; padding-top: 1rem; }
   .nav-links { gap: 0.85rem; }
-  h1 { font-size: clamp(3.1rem, 18vw, 4.7rem); }
+  h1 { font-size: clamp(3rem, 16vw, 4.7rem); line-height: 0.98; }
   .hero-orbit { min-height: 330px; }
   .orbital-core { width: 104px; height: 104px; }
   .panel-heading, .visual-head, footer { flex-direction: column; align-items: flex-start; }
