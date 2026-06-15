@@ -109,13 +109,14 @@ body::before {
 .nav-links { display: flex; gap: 1.3rem; font-weight: 750; }
 .nav a:hover, .nav a:focus-visible, .footer-links a:hover { color: var(--cyan); }
 
-.hero { padding-bottom: clamp(3rem, 8vw, 6rem); }
+.hero { padding-bottom: clamp(3rem, 8vw, 6rem); overflow: visible; }
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
   gap: clamp(2.25rem, 5vw, 4.25rem);
   align-items: center;
   min-height: clamp(560px, 72vh, 700px);
+  overflow: visible;
 }
 .eyebrow, .panel-kicker {
   margin: 0 0 0.75rem;
@@ -126,13 +127,14 @@ body::before {
   font-weight: 900;
 }
 h1, h2, h3 { margin-block: 0; letter-spacing: -0.045em; }
-.hero-copy { min-width: 0; }
+.hero-copy { min-width: 0; overflow: visible; }
 h1 {
   max-width: min(820px, 100%);
-  padding-block: 0.08em;
+  display: block;
+  padding-block: 0.14em;
   overflow: visible;
   font-size: clamp(3.55rem, 7.6vw, 7.7rem);
-  line-height: 0.96;
+  line-height: 1.08;
   background: linear-gradient(110deg, #fff 8%, var(--cyan) 42%, #d3c9ff 78%);
   -webkit-background-clip: text;
   background-clip: text;
